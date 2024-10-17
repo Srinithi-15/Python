@@ -1,0 +1,41 @@
+class Student:
+students = ["John", "Jane", "Alice", "Bob", "Charlie", "David", "Emma", "Frank", "Grace", "Henry"]
+for student in students:
+    attendance_system.add_student(student)
+
+# PIN verification
+entered_pin = input("Enter PIN to access: ")
+if entered_pin != attendance_system.pin:
+    print("Invalid PIN. Access denied.")
+else:
+    print("Access granted.")
+
+    while True:
+        # Options for the user
+        print("\nOptions:")
+        print("1. Mark Present")
+        print("2. Mark Absent")
+        print("3. View Individual Attendance Details")
+        print("4. View Overall Attendance")
+        print("5. Exit")
+        option = int(input("Enter your choice: "))
+
+if option == 1 or option == 2:
+            print("Students:")
+            for student in students:
+                print(student)
+            name = input("Enter student name: ")
+            if option == 1:
+                attendance_system.mark_attendance(name, 'P')
+            elif option == 2:
+                attendance_system.mark_attendance(name, 'A')
+        elif option == 3:
+            name = input("Enter student name to view attendance details: ")
+            attendance_system.view_attendance_details(name)
+        elif option == 4:
+            attendance_system.view_overall_attendance()
+        elif option == 5:
+            print("Exiting...")
+            break
+        else:
+            print("Invalid option. Please try again.")
